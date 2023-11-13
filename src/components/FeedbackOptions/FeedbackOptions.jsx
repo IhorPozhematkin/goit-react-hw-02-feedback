@@ -1,13 +1,14 @@
-import { Button, ButtonList } from './FeedbackOptions.styled';
+import { ButtonItem, ButtonList } from './FeedbackOptions.styled';
+import { nanoid } from 'nanoid';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <ButtonList>
       {options.map(option => (
-        <li>
-          <Button type="button" aria-label={option} onClick={onLeaveFeedback}>
+        <li key={nanoid()}>
+          <ButtonItem type="button" onClick={onLeaveFeedback}>
             {option}
-          </Button>
+          </ButtonItem>
         </li>
       ))}
     </ButtonList>
