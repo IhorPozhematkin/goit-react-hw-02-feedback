@@ -12,9 +12,9 @@ export class App extends Component {
     bad: 0,
   };
 
-  onLeaveFeedback = e => {
+  onLeaveFeedback = option => {
     this.setState(prev => {
-      return { [e.target.textContent]: prev[e.target.textContent] + 1 };
+      return { [option]: prev[option] + 1 };
     });
   };
 
